@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=640, user-scalable=no">
+    <script src="../scripts/lib/web-monitor.js"></script>
+    <script type="text/javascript">
+        var accessKey = randomString(7);
+        ajax({
+            dataType: 'json',
+            data: {
+                appId: 'ofgWc1552267686107',
+                funcId: 'page_load',
+                markPage: accessKey,
+                loadType: 'start',
+                isPage: !0
+            },
+            url: 'https://test-4.ebiaoji.com/api/report/web',
+            type: 'POST',
+            timeout: 0,
+            success: function(res){
+                if(res && res.objects && res.objects.access_time){
+                    accessTime = res.objects.access_time;
+                    console.log(accessTime);
+                }
+            }
+        });
+    </script>
+    <title></title>
+    <link rel="stylesheet" href="../css/phone.css">
+</head>
+<body>
+<div id="container">
+
+    <div class="content">
+        <div class="avator">
+            <img src="" alt="">
+        </div>
+
+        <div class="btns-wra">
+            <div class="btn sign-btn">
+                <img src="../images/phone/1_3.png" alt="">
+            </div>
+
+            <div class="btn redpack-btn">
+                <img src="../images/phone/1_4.png" alt="">
+            </div>
+
+            <div class="btn vote-btn">
+                <img src="../images/phone/1_5.png" alt="">
+            </div>
+
+            <div class="btn speak-btn">
+                <img src="../images/phone/1_6.png" alt="">
+            </div>
+
+            <div class="btn shake-btn">
+                <img src="../images/phone/1_7.png" alt="">
+            </div>
+        </div>
+    </div>
+
+    <!--签到弹窗-->
+    <div class="sign-win" id="sign-win">
+        <div class="sign-con">
+            <div class="sign-title">我要签到</div>
+            <div class="sign-form-wra" id="sign-form-wra">
+                <div class="sign-form">
+                    <div class="input-wra" id="input-wra">
+
+                    </div>
+                    <div class="form-btn" id="sign-submit">提交</div>
+                </div>
+            </div>
+            <img class="sign-close" id="sign-close" src="../images/phone/5_3.png" alt="">
+        </div>
+    </div>
+
+    <!--提交成功弹窗-->
+    <div class="sign-success" id="sign-success">
+        <div class="success-con">
+            <div class="sign-title">温馨提示</div>
+            <div class="success-dec">
+                <img class="success-tip" src="../images/phone/6_1.png" alt="">
+                <div class="success-text">提交成功</div>
+                <div class="form-btn" id="success-close">我知道了</div>
+            </div>
+        </div>
+    </div>
+
+    <!--投票-->
+    <div id="vote" class="page">
+        <div class="vote-con">
+            <div class="sign-title">我要投票</div>
+            <div class="vote-container-wra" id="vote-container-wra">
+                <div class="vote-container">
+                    <div class="question">
+                        <h3 id="questionTitle" class="questionTitle">期待哪些职位适合你？</h3>
+                        <form id="questionSelect"></form>
+
+                        <a type="button" id="submitVote">提交投票</a>
+                    </div>
+                </div>
+            </div>
+
+            <img class="close-vote" id="close-vote" src="../images/phone/5_3.png">
+        </div>
+    </div>
+
+    <!--留言-->
+    <div id="speak" class="page">
+        <div class="signIn">
+            <div class="speak-title">我要留言</div>
+            <form>
+                <textarea id="comment" placeholder="在这里发言，写下你想要说的话，请在50个字以内哦~" maxlength="50"></textarea>
+
+                <a href="javascript:void(0);" id="submitSpeak">我要发言</a>
+            </form>
+
+            <img class="close-speak" id="close-speak" src="../images/phone/5_3.png">
+        </div>
+    </div>
+
+    <!--抢红包弹窗-->
+    <div class="redPack-win" id="redPack-win">
+        <div class="redPack-con">
+            <div class="redPack-title">恭喜您获得</div>
+
+            <!--中现金红包-->
+            <div class="dec dec1">
+                <div class="num"><span>5</span>元</div>
+                <div class="type">现金红包</div>
+                <div class="tips">(红包将通过公众号发放给您，请注意查收)</div>
+            </div>
+
+            <!--中实物-->
+            <div class="dec dec2">
+                <div class="name"></div>
+                <div class="num"></div>
+            </div>
+
+            <!--未中奖-->
+            <div class="dec dec3">
+                <div class="name">您未中奖</div>
+                <img class="cry-img" src="../images/phone/4_1.png" alt="">
+            </div>
+
+            <img class="redPack-confirm" id="redPack-confirm" src="../images/phone/2_1.png" alt="">
+        </div>
+
+        <img class="redPack-img" src="../images/phone/2_3.png" alt="">
+    </div>
+
+    <!-- 摇一摇 -->
+    <div id="shake" class="shake-mask page">
+        <div class="shake-con">
+            <div class="speak-title">温馨提示</div>
+            <div class="shake-dec">
+                <div class="shake-wra">
+                    <img class="shake-img" src="../images/phone/9_1.png" />
+                    <div class="animImg0 animImg">
+                        <img src="../images/phone/9_2.png">
+                        <img src="../images/phone/9_3.png">
+                        <img src="../images/phone/9_4.png">
+                    </div>
+                </div>
+                <div class="shake-tips">请摇动手机参与游戏！</div>
+            </div>
+            <img class="shake-close" id="shake-close" src="../images/phone/5_3.png" alt="">
+        </div>
+    </div>
+
+    <!--活动已结束弹窗-->
+    <div class="activity-ends" id="activity-ends">
+        <div class="activity-con">
+            <div class="activity-title">温馨提示</div>
+            <div class="activity-dec">
+                <img class="activity-img" src="../images/phone/10_1.png" />
+                <div class="activity-tips">活动已结束！</div>
+                <div class="activity-end-btn" id="activity-end-btn">我知道了</div>
+            </div>
+
+        </div>
+    </div>
+
+    <!--活动未开始弹窗-->
+    <div class="activity-start" id="activity-start">
+        <div class="activity-con">
+            <div class="activity-title">温馨提示</div>
+            <div class="activity-dec">
+                <img class="activity-img" src="../images/phone/11_1.png" />
+                <div class="activity-tips">活动尚未开启，敬请期待！</div>
+                <div class="activity-start-btn" id="activity-start-btn">我知道了</div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script src="../scripts/lib/jquery-2.2.2.min.js"></script>
+<script src="../scripts/lib/common.js"></script>
+<script src="../scripts/lib/commonFunc.js"></script>
+<script src="../scripts/lib/validate.js"></script>
+<script src="../scripts/plugins/betterScroll/bscroll.js"></script>
+<script src="../scripts/lib/jweixin-1.0.0.js"></script>
+<script src="../scripts/lib/myweixin-1.0.js"></script>
+<script src="../scripts/lib/md5.js"></script>
+<script src="../scripts/other/phone.js"></script>
+<script src="../scripts/other/shake.js"></script>
+<script>
+    // 禁止页面滚动
+    $('#container').on('touchmove',function (e) {
+        e.preventDefault();
+    });
+
+
+    var scrollWra = new BScroll('#vote-container-wra',{
+        click:true,
+    });
+
+
+    var scrollSign = new BScroll('#sign-form-wra',{
+        click:true,
+    })
+
+</script>
+<script type="text/javascript">
+    document.onreadystatechange = monitorEndAjax;
+    function monitorEndAjax() {
+        if(document.readyState == "complete"){
+            ajax({
+                dataType: 'json',
+                data: {
+                    appId: 'ofgWc1552267686107',
+                    funcId: 'page_load',
+                    markPage: accessKey,
+                    loadType: 'end',
+                    isPage: !0
+                },
+                url: 'https://test-4.ebiaoji.com/api/report/web',
+                type: 'POST',
+                timeout: 200,
+                success (res) {
+
+                }
+            });
+        }
+    }
+</script>
+</body>
+</html>
+

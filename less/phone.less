@@ -1,0 +1,999 @@
+
+@import "common/reset";
+
+html,body {
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	background: #fff;
+}
+
+#container {
+	position: relative;
+
+	width: 100%;
+	height: 100%;
+
+	background: url('../images/phone/1_1.jpg') no-repeat;
+	background-size: 100% 100%;
+}
+
+.content {
+	position: relative;
+
+	width: 100%;
+	height: 100%;
+
+	.avator {
+		margin: 0 auto;
+		padding-top: 50%;
+
+		img {
+			display: none;
+
+			width: 150px;
+			height: 150px;
+			margin: 0 auto;
+
+			border: 5px solid #048bff;
+			border-radius: 50%;
+
+			box-shadow: 0 0 20px 0 #fff;
+		}
+	}
+
+	.btns-wra {
+		margin: 30px auto 0 auto;
+
+		.btn {
+			width: 27%;
+			margin: 20px auto 0 auto;
+
+			&:first-child {
+				margin: 0 auto;
+			}
+
+			img {
+				display: block;
+				width: 100%;
+
+				margin: 0 auto;
+			}
+		}
+	}
+}
+
+/*签到弹窗*/
+.sign-win {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 9999;
+
+	display: none;
+
+	width: 100%;
+	height: 100%;
+
+	background: rgba(0, 0, 0, 0.5);
+
+	.sign-con {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		z-index: 1;
+
+		width: 530px;
+
+		border-radius: 20px;
+
+		-webkit-transform: translate(-50%,-50%);
+
+		.sign-title {
+			width: 100%;
+			height: 238px;
+			padding-top: 130px;
+
+			font-size: 40px;
+			text-align: center;
+			line-height: 40px;
+			color: #fff;
+			font-weight: bold;
+
+			background: url('../images/phone/5_1.png') no-repeat;
+			background-size: 100% 100%;
+
+			box-sizing: border-box;
+		}
+
+		.sign-form-wra {
+			width: 86%;
+			padding: 0 7%;
+			max-height: 480px;
+			margin: 0 auto;
+
+			background: #fff;
+
+			border-radius: 0 0 20px 20px;
+
+			overflow: hidden;
+		}
+
+		.sign-form {
+			width: 100%;
+			padding: 30px 0;
+
+			.form-item {
+				position: relative;
+
+				width: 100%;
+				height: 55px;
+				margin-top: 15px;
+
+				background: #e0e0e0;
+
+				border-radius: 35px;
+
+				&:first-child {
+					margin-top: 0;
+				}
+
+				.form-input {
+					display: block;
+
+					width: 100%;
+					height: 55px;
+					padding: 0 20px;
+
+					font-size: 26px;
+					color: #333;
+					line-height: 55px;
+
+					border-radius: 35px;
+
+					background: transparent;
+
+					box-sizing: border-box;
+
+					&::-webkit-input-placeholder {
+						color: #333;
+					}
+				}
+
+				.select-input {
+					position: absolute;
+					left: 0;
+					top: 0;
+					z-index: 10;
+
+					border: none;
+
+					option {
+						font-size: 12px;
+					}
+				}
+
+				.icon {
+					position: absolute;
+					right: 30px;
+					top: 0;
+					z-index: 5;
+
+					display: block;
+
+					line-height: 55px;
+				}
+			}
+
+			.form-btn {
+				width: 332px;
+				height: 82px;
+				margin: 15px auto 0 auto;
+
+				font-size: 30px;
+				color: #fff;
+				line-height: 82px;
+				text-align: center;
+
+				background: url('../images/phone/5_2.png') no-repeat;
+			}
+		}
+
+		.sign-close {
+			position: absolute;
+			left: 44%;
+			bottom: -100px;
+			z-index: 10;
+
+			display: block;
+
+			width: 12%;
+		}
+	}
+}
+
+/*签到成功*/
+.sign-success {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 9999;
+
+	display: none;
+
+	width: 100%;
+	height: 100%;
+
+	background: rgba(0, 0, 0, 0.5);
+
+	.success-con {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		z-index: 1;
+
+		width: 530px;
+
+		-webkit-transform: translate(-50%,-50%);
+
+		.sign-title {
+			width: 100%;
+			height: 238px;
+			padding-top: 130px;
+
+			font-size: 40px;
+			text-align: center;
+			line-height: 40px;
+			color: #fff;
+			font-weight: bold;
+
+			background: url('../images/phone/5_1.png') no-repeat;
+			background-size: 100% 100%;
+
+			box-sizing: border-box;
+		}
+
+		.success-dec {
+			padding: 40px 0 15px 0;
+
+			border-radius: 0 0 20px 20px;
+
+			background: #fff;
+		}
+
+		.success-tip {
+			display: block;
+
+			margin: 0 auto;
+		}
+
+		.success-text {
+			margin-top: 34px;
+
+			font-size: 30px;
+			line-height: 30px;
+			text-align: center;
+			color: #666;
+		}
+
+		.form-btn {
+			width: 332px;
+			height: 82px;
+			margin: 34px auto 0 auto;
+
+			font-size: 30px;
+			color: #fff;
+			line-height: 82px;
+			text-align: center;
+
+			background: url('../images/phone/5_2.png') no-repeat;
+		}
+	}
+}
+
+/*投票*/
+#vote {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 9999;
+
+	display: none;
+
+	width: 100%;
+	height: 100%;
+
+	background: rgba(0, 0, 0, 0.5);
+
+	.vote-con {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		z-index: 1;
+
+		width: 530px;
+
+		border-radius: 20px;
+
+		-webkit-transform: translate(-50%,-50%);
+
+		.sign-title {
+			width: 100%;
+			height: 238px;
+			padding-top: 130px;
+
+			font-size: 40px;
+			text-align: center;
+			line-height: 40px;
+			color: #fff;
+			font-weight: bold;
+
+			background: url('../images/phone/5_1.png') no-repeat;
+			background-size: 100% 100%;
+
+			box-sizing: border-box;
+		}
+
+		.title {
+			width: 50%;
+			position: absolute;
+			top: 8%;
+			left: 30%;
+			z-index: 10;
+		}
+
+		.vote-container-wra {
+			width: 100%;
+			max-height: 500px;
+
+			overflow: hidden;
+
+			background: #fff;
+
+			border-radius: 0 0 20px 20px;
+
+			.vote-container {
+				padding-bottom: 20px;
+
+				.question {
+					width: 100%;
+
+					.questionTitle {
+						padding: 40px 30px 10px 30px;
+
+						line-height: 40px;
+						font-size: 30px;
+						color: #000;
+						//border-bottom: 1px solid #fff;
+					}
+
+					.formRow {
+						position: relative;
+
+						display: flex;
+
+						padding: 10px 30px;
+
+						font-size: 26px;
+						font-weight: normal;
+						color: #000;
+
+						.select {
+							display: block;
+
+							line-height: 34px;
+						}
+
+						.line {
+							flex: 1;
+
+							margin: 16px 12px 0 12px;
+
+							border-top: 2px dashed #d6d6d6;
+						}
+
+						.select-item {
+
+							.select-img {
+								display: none;
+
+								width: 34px;
+							}
+
+							.select-old {
+								display: block;
+							}
+						}
+					}
+
+					.active {
+
+						.select-item {
+
+							.select-old {
+								display: none;
+							}
+
+							.select-new {
+								display: block;
+							}
+						}
+					}
+
+					#submitVote {
+						display: block;
+
+						width: 332px;
+						height: 82px;
+						margin: 15px auto 0 auto;
+
+						font-size: 30px;
+						color: #fff;
+						line-height: 82px;
+						text-align: center;
+
+						background: url('../images/phone/5_2.png') no-repeat;
+					}
+				}
+			}
+		}
+	}
+
+	.close-vote {
+		position: absolute;
+		left: 44%;
+		bottom: -100px;
+		z-index: 10;
+
+		display: block;
+
+		width: 12%;
+	}
+}
+
+/*发言*/
+#speak {
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	display: none;
+
+	width: 100%;
+	height: 100%;
+
+	background: rgba(0, 0, 0, .7);
+
+	.signIn {
+		position: absolute;
+		width: 80%;
+		top: 50%;
+		left: 10%;
+
+		border-radius: 20px;
+
+		-webkit-transform: translateY(-50%);
+
+		.speak-title {
+			width: 100%;
+			height: 238px;
+			padding-top: 130px;
+
+			font-size: 40px;
+			text-align: center;
+			line-height: 40px;
+			color: #fff;
+			font-weight: bold;
+
+			background: url('../images/phone/5_1.png') no-repeat;
+			background-size: 100% 100%;
+
+			box-sizing: border-box;
+		}
+
+		.userImg {
+			display: block;
+
+			width: 90px;
+			height: 90px;
+
+			margin: 0 auto;
+			border-radius: 50%;
+		}
+
+		.userName {
+			padding: 10px 0 20px 0;
+			color: #000;
+			text-align: center;
+			font-size: 24px;
+		}
+
+		form {
+			padding: 30px 0;
+
+			background: #fff;
+
+			border-radius: 0 0 20px 20px;
+		}
+
+		#comment {
+			display: block;
+
+			height: 260px;
+			width: 90%;
+			margin: 0 auto;
+			padding: 20px 10px;
+
+			color: #000;
+			font-size: 22px;
+
+			background: #e0e0e0;
+
+			border-radius: 15px;
+
+			box-sizing: border-box;
+		}
+
+		#comment::-webkit-input-placeholder {
+			color: #666;
+		}
+
+		#submitSpeak {
+			display: block;
+
+			width: 332px;
+			height: 82px;
+			margin: 34px auto 0 auto;
+
+			font-size: 30px;
+			color: #fff;
+			line-height: 82px;
+			text-align: center;
+
+			background: url('../images/phone/5_2.png') no-repeat;
+		}
+
+		.close-speak {
+			position: absolute;
+			left: 44%;
+			bottom: -100px;
+			z-index: 10;
+
+			display: block;
+
+			width: 12%;
+		}
+	}
+}
+
+/*抢红包*/
+.redPack-win {
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	display: none;
+
+	width: 100%;
+	height: 100%;
+
+	background: rgba(0, 0, 0, .7);
+
+	.redPack-con {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		z-index: 1;
+
+		width: 528px;
+		height: 560px;
+		padding-top: 40px;
+
+		background: url('../images/phone/2_2.png') no-repeat;
+		background-size: 100% 100%;
+
+		-webkit-transform: translate(-50%,-50%);
+
+		box-sizing: border-box;
+
+		.redPack-title {
+			width: 100%;
+
+			text-align: center;
+			font-size: 36px;
+			color: #eeaa47;
+			line-height: 36px;
+			font-weight: bold;
+		}
+
+		.dec {
+			position: relative;
+
+			display: none;
+
+			margin-top: 30px;
+
+			text-align: center;
+
+			.num {
+				line-height: 50px;
+				color: #fd575b;
+
+				span {
+					display: inline-block;
+
+					font-size: 50px;
+					color: #fc575b;
+					font-weight: bold;
+				}
+			}
+
+			.type {
+				margin-top: 20px;
+
+				color: #fd575b;
+				font-size: 32px;
+				line-height: 32px;
+				text-align: center;
+			}
+
+			.tips {
+				margin-top: 16px;
+
+				font-size: 22px;
+				color: #fc575b;
+				text-align: center;
+			}
+		}
+
+		.dec2 {
+			margin-top: 60px;
+
+			.name {
+				line-height: 50px;
+				color: #fd575b;
+				font-size: 50px;
+				font-weight: bold;
+			}
+
+			.num {
+				margin-top: 40px;
+
+				color: #fd575b;
+				font-size: 32px;
+				line-height: 32px;
+				text-align: center;
+			}
+		}
+
+		.dec3 {
+			margin-top: 30px;
+
+			.name {
+				line-height: 50px;
+				color: #fd575b;
+				font-size: 50px;
+				font-weight: bold;
+			}
+
+			.cry-img {
+				display: block;
+
+				width: 200px;
+				margin: 30px auto 0 auto;
+			}
+		}
+
+		.redPack-confirm {
+			position: absolute;
+			left: 20%;
+			bottom: 5%;
+			z-index: 2;
+
+			display: block;
+
+			width: 60%;
+
+			cursor: pointer;
+		}
+	}
+
+	.redPack-img {
+		position: absolute;
+		left: 50%;
+		top: 44%;
+		z-index: 2;
+
+		display: none;
+
+		width: 626px;
+		height: 261px;
+
+		-webkit-transform: translate(-50%,-50%);
+	}
+}
+
+/*摇一摇*/
+.shake-mask {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 9999;
+
+	display: none;
+
+	width: 100%;
+	height: 100%;
+
+	background: rgba(0, 0, 0, 0.5);
+
+	.shake-con {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		z-index: 1;
+
+		width: 530px;
+		padding-bottom: 66px;
+
+		border-radius: 20px;
+
+		-webkit-transform: translate(-50%,-50%);
+
+		.speak-title {
+			width: 100%;
+			height: 238px;
+			padding-top: 130px;
+
+			font-size: 40px;
+			text-align: center;
+			line-height: 40px;
+			color: #fff;
+			font-weight: bold;
+
+			background: url('../images/phone/5_1.png') no-repeat;
+			background-size: 100% 100%;
+
+			box-sizing: border-box;
+		}
+
+		.shake-dec {
+			padding: 30px 0 66px 0;
+
+			background: #fff;
+
+			border-radius: 0 0 20px 20px;
+
+			.shake-wra {
+				position: relative;
+
+				width: 280px;
+				margin: 0 auto;
+
+				.shake-img {
+					display: block;
+
+					width: 100%;
+					margin: 0 auto;
+				}
+
+				.animImg {
+					position: absolute;
+					top: 0;
+					left: 0;
+
+					width: 280px;
+
+					animation: shake 1s ease both infinite alternate;
+					-webkit-animation: shake 1s ease both infinite alternate;
+
+					img {
+						position: absolute;
+						left: 0;
+						top: 0;
+						z-index: 1;
+
+						display: block;
+
+						width: 100%;
+					}
+				}
+			}
+
+			.shake-tips {
+				margin-top: 30px;
+
+				font-size: 32px;
+				color: #666;
+				line-height: 32px;
+				text-align: center;
+			}
+		}
+
+		.shake-close {
+			position: absolute;
+			left: 44%;
+			bottom: -100px;
+			z-index: 10;
+
+			display: block;
+
+			width: 12%;
+		}
+	}
+}
+
+
+/*活动结束*/
+.activity-ends {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 9999;
+
+	display: none;
+
+	width: 100%;
+	height: 100%;
+
+	background: rgba(0, 0, 0, 0.5);
+
+	.activity-con {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		z-index: 1;
+
+		width: 530px;
+
+		-webkit-transform: translate(-50%,-50%);
+
+		.activity-title {
+			width: 100%;
+			height: 238px;
+			padding-top: 130px;
+
+			font-size: 40px;
+			text-align: center;
+			line-height: 40px;
+			color: #fff;
+			font-weight: bold;
+
+			background: url('../images/phone/5_1.png') no-repeat;
+			background-size: 100% 100%;
+
+			box-sizing: border-box;
+		}
+
+		.activity-dec {
+			padding: 30px 0;
+
+			background: #fff;
+
+			border-radius: 0 0 20px 20px;
+		}
+
+		.activity-img {
+			display: block;
+
+			margin: 0 auto;
+		}
+
+		.activity-tips {
+			margin-top: 30px;
+
+			font-size: 32px;
+			color: #666;
+			line-height: 32px;
+			text-align: center;
+		}
+
+		.activity-end-btn {
+			display: block;
+
+			width: 332px;
+			height: 82px;
+			margin: 34px auto 0 auto;
+
+			font-size: 30px;
+			color: #fff;
+			line-height: 82px;
+			text-align: center;
+
+			background: url('../images/phone/5_2.png') no-repeat;
+		}
+	}
+}
+
+/*活动未开始*/
+.activity-start {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 9999;
+
+	display: none;
+
+	width: 100%;
+	height: 100%;
+
+	background: rgba(0, 0, 0, 0.5);
+
+	.activity-con {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		z-index: 1;
+
+		width: 530px;
+
+		-webkit-transform: translate(-50%,-50%);
+
+		.activity-dec {
+			padding: 30px 0;
+
+			border-radius: 0 0 20px 20px;
+
+			background: #fff;
+		}
+
+		.activity-title {
+			width: 100%;
+			height: 238px;
+			padding-top: 130px;
+
+			font-size: 40px;
+			text-align: center;
+			line-height: 40px;
+			color: #fff;
+			font-weight: bold;
+
+			background: url('../images/phone/5_1.png') no-repeat;
+			background-size: 100% 100%;
+
+			box-sizing: border-box;
+		}
+
+		.activity-img {
+			display: block;
+
+			margin: 30px auto 0 auto;
+		}
+
+		.activity-tips {
+			margin-top: 30px;
+
+			font-size: 32px;
+			color: #666;
+			line-height: 32px;
+			text-align: center;
+		}
+
+		.activity-start-btn {
+			display: block;
+
+			width: 332px;
+			height: 82px;
+			margin: 34px auto 0 auto;
+
+			font-size: 30px;
+			color: #fff;
+			line-height: 82px;
+			text-align: center;
+
+			background: url('../images/phone/5_2.png') no-repeat;
+		}
+	}
+}
+
+@-webkit-keyframes shake {
+	0% {
+		transform: rotate(-15deg);
+	}
+
+	100% {
+		transform: rotate(10deg);
+	}
+}

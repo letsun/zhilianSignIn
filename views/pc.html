@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>智联</title>
+    <link rel="stylesheet" href="../css/animate.min.css">
+    <link rel="stylesheet" href="../css/pc.css">
+    <link rel="stylesheet" href="../scripts/plugins/swiper/swiper-3.3.1.min.css">
+</head>
+<body>
+    <div id="container">
+        <div class="wrapper">
+            <div class="content">
+
+                <!--签到-->
+                <div class="page sign-win" id="sign-win">
+                    <div class="title-wra">
+                        <div class="title">签到</div>
+                        <img class="title-bg" src="../images/pc/2_1.png" alt="">
+                        <div class="sign-num">签到总人数：<span></span></div>
+                    </div>
+                    <div class="sign-con" id="sign-con"></div>
+                    <div id="menu">
+                        <button id="table">表格</button>
+                        <button id="sphere">球球</button>
+                        <button id="helix">螺旋</button>
+                        <button id="grid">格子</button>
+                    </div>
+                    <div class="show_info animated">
+                        <div class="info_my">
+                            <img class="show_img" src="" />
+                            <div class="info_mem">
+                                <div class="info_mem-item">
+                                    <div class="infor-key">昵称：</div>
+                                    <div class="infor-val nickname"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--投票-->
+                <div class="page" id="vote">
+                    <div class="title-wra">
+                        <div class="title">投票</div>
+                        <img class="title-bg" src="../images/pc/2_1.png" alt="">
+                    </div>
+                    <div class="voteCon">
+                        <div id="voteTitle" class="voteTitle"></div>
+
+                        <div id="voteSelect" class="select"></div>
+                    </div>
+
+                    <a id="voteBtn" href="javascript:void(0)" data-type="0">开启投票</a>
+                </div>
+
+                <!--抽奖-->
+                <div class="page" id="lottery" style="display: none;">
+                    <div class="title-wra">
+                        <div class="title">抽奖</div>
+                        <img class="title-bg" src="../images/pc/2_1.png" alt="">
+                    </div>
+                    <div class="lotteryCon">
+                        <div class="lotteryItem">
+                            <div class="lottery-title">
+                                <img src="../images/pc/2_3.png" alt="">
+                                <div class="title-text">滚动抽奖</div>
+                            </div>
+                            <div class="lottery-list-wra">
+                                <div class="lottery-list">
+
+                                </div>
+                            </div>
+
+                            <div class="winning-wra">
+                                <img class="winning-bg" src="../images/pc/2_5.png" alt="">
+                                <img class="winning-avatar" src="" alt="">
+                                <div class="winning-award"></div>
+                                <div class="winning-nickname"></div>
+                            </div>
+
+                            <!--选择奖项及人数-->
+                            <div class="select-wra">
+                                <div class="select-item">
+                                    <div class="select-key">奖项：</div>
+                                    <select class="form-text" id="form-select"></select>
+                                </div>
+                                <div class="select-item">
+                                    <div class="select-key">人数：</div>
+                                    <input class="form-text form-input" id="form-input" placeholder="抽奖人数">
+                                </div>
+                            </div>
+
+                            <div class="lottery-btn" id="start-lottery">开始抽奖</div>
+                        </div>
+                        <div class="lotteryItem">
+                            <div class="lottery-title">
+                                <img src="../images/pc/2_7.png" alt="">
+                                <div class="title-text">中奖名单</div>
+                            </div>
+                            <div class="lottery-result"></div>
+                            <div class="lottery-btn" id="resetLottery-btn">重新抽奖</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--评论-->
+                <div class="page" id="comment">
+                    <div class="title-wra">
+                        <div class="title">留言</div>
+                        <img class="title-bg" src="../images/pc/2_1.png" alt="">
+                    </div>
+                    <div class="swiper-container" id="commentCon">
+                        <div class="swiper-wrapper"></div>
+                    </div>
+                </div>
+
+                <!--评论按钮-->
+                <ul class="commentBtn" id="commentBtn">
+                    <li id="prev"><img src="../images/pc/6_1.png"></li>
+                    <li id="stop" class="stop"></li>
+                    <li id="next"><img src="../images/pc/6_2.png"></li>
+                </ul>
+
+                <!--摇一摇-->
+                <div class="page shake-win" id="shake-win">
+                    <div class="title-wra">
+                        <div class="title">摇一摇</div>
+                        <img class="title-bg" src="../images/pc/2_1.png" alt="">
+                    </div>
+                    <div class="line-wra"></div>
+
+                    <!-- 倒计时 -->
+                    <div class="time-remain">
+                        <div class="remain-box">
+                            <div class="time-key">倒计时：</div>
+                            <div class="box-time"></div>
+                        </div>
+
+                        <div class="remain-btn" id="remain-btn" data-type="0">开启摇一摇</div>
+                    </div>
+
+                </div>
+
+                <!--抢红包-->
+                <div class="page redPackage-win" id="redPackage-win">
+                    <div class="title-wra">
+                        <div class="title">中奖名单</div>
+                        <img class="title-bg" src="../images/pc/2_1.png" alt="">
+                    </div>
+
+                    <div class="redPackage-list-wra"></div>
+                    <div class="redPackage-start" id="redPackage-start" data-type="0">开始</div>
+                </div>
+
+                <!--底部按钮-->
+                <ul class="nav">
+                    <li id="nav1" data-type="1"><img src="../images/pc/1_6.png"><div class="nav-text">签到</div></li>
+                    <li id="nav2" data-type="2"><img src="../images/pc/1_5.png"><div class="nav-text">抢红包</div></li>
+                    <li id="nav3" data-type="3"><img src="../images/pc/1_7.png"><div class="nav-text">投票</div></li>
+                    <li id="nav4" data-type="4"><img src="../images/pc/1_4.png"><div class="nav-text">评论</div></li>
+                    <li id="nav5" data-type="5"><img src="../images/pc/1_8.png"><div class="nav-text">摇一摇</div></li>
+                    <li id="nav6" data-type="6"><img src="../images/pc/1_3.png"><div class="nav-text">抽奖</div></li>
+                </ul>
+
+            </div>
+
+            <!--弹幕评论-->
+            <div class="barrage-comment" id="barrage-comment">
+
+            </div>
+        </div>
+
+    </div>
+</body>
+<script src="../scripts/lib/jquery-2.2.2.min.js"></script>
+<script src="../scripts/lib/common.js"></script>
+<script src="../scripts/plugins/three/three.js"></script>
+<script src="../scripts/plugins/three/tween.min.js"></script>
+<script src="../scripts/plugins/three/TrackballControls.js"></script>
+<script src="../scripts/plugins/three/CSS3DRenderer.js"></script>
+<script src="../scripts/plugins/swiper/swiper-3.3.1.jquery.min.js"></script>
+<script src="../scripts/other/pc.js"></script>
+<script src="../scripts/other/sign.js"></script>
+<script src="../scripts/other/lottery.js"></script>
+<script src="../scripts/other/vote.js"></script>
+<script src="../scripts/other/shake.js"></script>
+<script src="../scripts/other/comment.js"></script>
+<script src="../scripts/other/redPackage.js"></script>
+</html>
